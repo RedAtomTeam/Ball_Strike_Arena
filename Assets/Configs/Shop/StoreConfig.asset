@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88619e26235c0f944b3df1a094242183, type: 3}
   m_Name: StoreConfig
   m_EditorClassIdentifier: 
-  money: 0
+  money: 970
   stuff:
   - {fileID: 11400000, guid: 6a9beb7b1b7175e45a988c4fe4d4fe4f, type: 2}
   - {fileID: 11400000, guid: 9f3e6ff7536c40342949cb21e02414ec, type: 2}

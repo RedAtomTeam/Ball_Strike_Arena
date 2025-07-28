@@ -12,7 +12,8 @@ public class ShopSlider : MonoBehaviour
 
     private StoreStuff _targetStuff;
     private int _targetSuffIndex; 
-    [SerializeField] private TextMeshProUGUI _price;
+    [SerializeField] private GameObject _priceBlock;
+    [SerializeField] private TextMeshProUGUI _priceText;
     [SerializeField] private Button _buyButton;
     [SerializeField] private Image _stuffImage;
 
@@ -26,6 +27,7 @@ public class ShopSlider : MonoBehaviour
 
     private void OnEnable()
     {
+        SaveLoadConfigsService.Instance.SaveAll();
         _targetSuffIndex = 0;
         _targetStuff = _storeConfig.stuff[_targetSuffIndex];
         UpdateView();
@@ -58,7 +60,11 @@ public class ShopSlider : MonoBehaviour
             _rightSliderBtn.gameObject.SetActive(false);
 
         // Обновление отображения цены
-        _price.text = _targetStuff.price.ToString();
+        _priceText.text = _targetStuff.price.ToString();
+        if (_targetStuff.isBuy)
+            _priceBlock.SetActive(false);
+        else 
+            _priceBlock.SetActive(true);
 
         // Обновление отображения кнопки покупки
         _buyButton.gameObject.SetActive(!_targetStuff.isBuy);
