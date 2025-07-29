@@ -7,4 +7,5 @@ public class LevelConfig : ScriptableObject
     public int level;
     public string sceneName;
     public bool status;
+    public int scoreForWin;
 }

@@ -17,3 +17,4 @@ MonoBehaviour:
   ballPrefab: {fileID: 0}
   nextBallConfig: {fileID: 11400000, guid: 9b81812137b8b424abedbe8ac5f28a41, type: 2}
   prevBallConfig: {fileID: 0}
+  scoreForSpawn: 5

@@ -15,3 +15,4 @@ MonoBehaviour:
   level: 12
   sceneName: Level 12
   status: 0
+  scoreForWin: 1200

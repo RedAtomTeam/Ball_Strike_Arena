@@ -9,4 +9,6 @@ public class BallConfig : ScriptableObject
 
     public BallConfig nextBallConfig;
     public BallConfig prevBallConfig;
+
+    public int scoreForSpawn;
 }

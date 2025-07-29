@@ -15,3 +15,4 @@ MonoBehaviour:
   level: 7
   sceneName: Level 7
   status: 0
+  scoreForWin: 700

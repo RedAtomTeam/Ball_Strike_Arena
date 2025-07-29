@@ -15,3 +15,4 @@ MonoBehaviour:
   level: 9
   sceneName: Level 9
   status: 0
+  scoreForWin: 900
