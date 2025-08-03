@@ -17,6 +17,10 @@ public class ShopSlider : MonoBehaviour
     [SerializeField] private Button _buyButton;
     [SerializeField] private Image _stuffImage;
 
+    [SerializeField] private GameObject _isNotBuy;
+    [SerializeField] private GameObject _isSelected;
+    [SerializeField] private GameObject _isNotSelected;
+
 
     private void Awake()
     {
@@ -49,9 +53,22 @@ public class ShopSlider : MonoBehaviour
 
     private void UpdateView()
     {
-        // Обновление отображения кнопок
+        //Обновление отображения кнопок
         _leftSliderBtn.gameObject.SetActive(true);
         _rightSliderBtn.gameObject.SetActive(true);
+
+        _isNotBuy.SetActive(false);
+        _isSelected.SetActive(false);
+        _isNotSelected.SetActive(false);
+
+        if (_targetStuff.isBuy)
+            if (_targetStuff.isSelected)
+                _isSelected.SetActive(true); 
+            else
+                _isNotSelected.SetActive(true);
+        else
+            _isNotBuy.SetActive(true);
+
 
         if (_targetStuff == _storeConfig.stuff[0])
             _leftSliderBtn.gameObject.SetActive(false);
@@ -66,18 +83,12 @@ public class ShopSlider : MonoBehaviour
         else 
             _priceBlock.SetActive(true);
 
-        // Обновление отображения кнопки покупки
-        _buyButton.gameObject.SetActive(!_targetStuff.isBuy);
-
         // Обновление отображения картинки товара
         _stuffImage.sprite = _targetStuff._sprite;
     }
 
     public void Buy()
     {
-        if (_targetStuff.isBuy)
-            return;
-
         if (_storeConfig.money >= _targetStuff.price)
         {
             _storeConfig.money -= _targetStuff.price;
@@ -85,5 +96,14 @@ public class ShopSlider : MonoBehaviour
             SaveLoadConfigsService.Instance.SaveAll();
             UpdateView();
         }
+    }
+
+    public void Select()
+    {
+        foreach(var stuff in _storeConfig.stuff)
+            if (stuff == _targetStuff)
+                stuff.isSelected = true;
+            else
+                stuff.isSelected = false;
     }
 }

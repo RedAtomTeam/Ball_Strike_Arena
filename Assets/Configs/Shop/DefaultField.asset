@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 567946d64b9378e4892491eec779ff6f, type: 3}
-  m_Name: BlueField
+  m_Name: DefaultField
   m_EditorClassIdentifier: 
-  stuffName: Blue Field
-  isBuy: 0
-  price: 10
-  isSelected: 0
-  _sprite: {fileID: 21300000, guid: 96e61654e48bab44fa2a45662ca200fd, type: 3}
+  stuffName: Default Field
+  isBuy: 1
+  price: 0
+  isSelected: 1
+  _sprite: {fileID: 21300000, guid: f5875842d21bf8f42a6d79c00c965f96, type: 3}
