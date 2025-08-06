@@ -7,5 +7,5 @@ public class StoreStuff : ScriptableObject
     public bool isBuy;
     public int price;
     public bool isSelected;
-    public Sprite _sprite;
+    public Sprite sprite;
 }

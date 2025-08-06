@@ -84,7 +84,7 @@ public class ShopSlider : MonoBehaviour
             _priceBlock.SetActive(true);
 
         // Обновление отображения картинки товара
-        _stuffImage.sprite = _targetStuff._sprite;
+        _stuffImage.sprite = _targetStuff.sprite;
     }
 
     public void Buy()
