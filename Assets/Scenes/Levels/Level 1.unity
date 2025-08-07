@@ -1918,10 +1918,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7765ece2f085e41869584f429c1851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _allLevelConfig: {fileID: 0}
-  _levelConfig: {fileID: 0}
-  _winWindow: {fileID: 0}
-  _scoreBarController: {fileID: 0}
+  _allLevelConfig: {fileID: 11400000, guid: da8a0eb16cf971547b1ad981db7a77a0, type: 2}
+  _levelConfig: {fileID: 11400000, guid: b142fb6aabb16114abff1e2d88a40570, type: 2}
+  _winWindow: {fileID: 1192173465}
+  _scoreBarController: {fileID: 837738750}
 --- !u!1 &1694458219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,6 +2082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1871397889}
   - component: {fileID: 1871397890}
+  - component: {fileID: 1871397891}
   m_Layer: 5
   m_Name: Spawner
   m_TagString: Untagged
@@ -2120,8 +2121,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec480f2443339ae41bdfad1b524c3183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultBallPref: {fileID: 0}
-  _relaxTime: 0
+  _defaultBallPref: {fileID: 3795482281623684314, guid: d1019633abd19e941abe3ddd0cb7c6df, type: 3}
+  _relaxTime: 3
+  _maxForce: 800
+  _maxDragDistance: 200
+  _directionVisualizer: {fileID: 0}
+--- !u!114 &1871397891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871397888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20539a3ee7ee0f4081e6f3e3bb9dd73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1941971120
 GameObject:
   m_ObjectHideFlags: 0

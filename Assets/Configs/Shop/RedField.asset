@@ -16,4 +16,4 @@ MonoBehaviour:
   isBuy: 0
   price: 10
   isSelected: 0
-  _sprite: {fileID: 21300000, guid: 513d2239242249a448b23a3fd5e85396, type: 3}
+  sprite: {fileID: 21300000, guid: 513d2239242249a448b23a3fd5e85396, type: 3}

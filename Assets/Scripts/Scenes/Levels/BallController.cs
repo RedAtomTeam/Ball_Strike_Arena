@@ -18,7 +18,7 @@ public class BallController : MonoBehaviour
 
     public void Kick(Vector3 force)
     {
-        _rb.isKinematic = false;
+        _rb.bodyType = RigidbodyType2D.Dynamic;
         _rb.AddForce(force, ForceMode2D.Impulse);
     }
 
