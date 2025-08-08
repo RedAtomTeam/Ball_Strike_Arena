@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BallController : MonoBehaviour
-{
+{ 
     [SerializeField] private BallConfig _ballConfig;
     [SerializeField] private Image _ballImage;
     [SerializeField] private Rigidbody2D _rb;
@@ -31,11 +31,13 @@ public class BallController : MonoBehaviour
     {
         if (_ballConfig.nextBallConfig != null)
             if (collision.gameObject.GetComponent<BallController>())
-                if (GetConfig == collision.gameObject.GetComponent<BallController>().GetConfig)
-                {
-                    Destroy(collision.gameObject);
-                    _ballConfig = _ballConfig.nextBallConfig;
-                    _scoreBarController.AddScore(_ballConfig.scoreForSpawn);
-                }
+                if (collision.gameObject.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+                    if (GetConfig == collision.gameObject.GetComponent<BallController>().GetConfig)
+                    {
+                        Destroy(collision.gameObject);
+                        _ballConfig = _ballConfig.nextBallConfig;
+                        _scoreBarController.AddScore(_ballConfig.scoreForSpawn);
+                        UpdateConfig();
+                    }
     }
 }

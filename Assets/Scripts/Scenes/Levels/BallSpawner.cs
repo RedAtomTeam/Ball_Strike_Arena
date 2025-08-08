@@ -15,6 +15,7 @@ public class BallSpawner : MonoBehaviour
     private bool _isDragging = false;
     private BallController _lastBall;
     [SerializeField] private DirectionVisualizer _directionVisualizer;
+    [SerializeField] private ScoreBarController _scoreBarController;
 
 
     private void Awake()
@@ -29,6 +30,7 @@ public class BallSpawner : MonoBehaviour
         ball.transform.localPosition = Vector3.zero;
         _isBallWait = true;
         _lastBall = ball.GetComponent<BallController>();
+        _lastBall.Init(_scoreBarController);
     }
 
     private void Update()
