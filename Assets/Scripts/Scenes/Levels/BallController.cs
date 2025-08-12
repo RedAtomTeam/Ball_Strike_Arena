@@ -8,6 +8,9 @@ public class BallController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private ScoreBarController _scoreBarController;
 
+    [SerializeField] private AudioClip _hitClip;
+    [SerializeField] private AudioClip _mergeClip;
+
     public BallConfig GetConfig {  get { return _ballConfig; } }
 
 
@@ -31,13 +34,19 @@ public class BallController : MonoBehaviour
     {
         if (_ballConfig.nextBallConfig != null)
             if (collision.gameObject.GetComponent<BallController>())
-                if (collision.gameObject.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+                if (collision.gameObject.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic &&
+                    gameObject.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
                     if (GetConfig == collision.gameObject.GetComponent<BallController>().GetConfig)
                     {
                         Destroy(collision.gameObject);
                         _ballConfig = _ballConfig.nextBallConfig;
                         _scoreBarController.AddScore(_ballConfig.scoreForSpawn);
                         UpdateConfig();
+                        AudioService.Instance.PlayEffect(_mergeClip);
+                        return;
                     }
+
+        AudioService.Instance.PlayEffect(_hitClip);
+
     }
 }

@@ -112,7 +112,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3795482281623684314}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -156,3 +156,5 @@ MonoBehaviour:
   _ballImage: {fileID: 2658600840164661225}
   _rb: {fileID: 7230931767463521127}
   _scoreBarController: {fileID: 0}
+  _hitClip: {fileID: 8300000, guid: ee3ad88f4c7ab19448f99ff803d3fae0, type: 3}
+  _mergeClip: {fileID: 8300000, guid: a2f1bf9f93bb69644b08dd60d3cc59e8, type: 3}

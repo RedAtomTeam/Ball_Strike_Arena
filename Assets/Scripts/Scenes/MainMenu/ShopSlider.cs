@@ -105,5 +105,6 @@ public class ShopSlider : MonoBehaviour
                 stuff.isSelected = true;
             else
                 stuff.isSelected = false;
+        UpdateView();
     }
 }

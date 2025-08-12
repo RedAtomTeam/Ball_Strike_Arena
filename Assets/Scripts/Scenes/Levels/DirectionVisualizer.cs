@@ -27,4 +27,5 @@ public class DirectionVisualizer : MonoBehaviour
         _arrow.transform.localScale = new Vector3(_arrow.transform.localScale.x, distance / 200, _arrow.transform.localScale.z);
     }
 
+
 }

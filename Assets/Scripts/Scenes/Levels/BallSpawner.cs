@@ -116,6 +116,7 @@ public class BallSpawner : MonoBehaviour
 
     private void Kick(Vector3 force)
     {
+        _lastBall.GetComponent<Collider2D>().enabled = true;
         _lastBall.Kick(force);
         _isBallWait = false;
     }
